@@ -28,5 +28,6 @@ Note: `x` means *any* digit of that many characters long, for example `xx` is an
 | *8* | `xx` | **BRP** | If the accumulator contains a value between 000 and 999, then set the program counter to the given address `xx` |
 | *9* | `01` | **INP** | Get an input from the user and store it in the accumulator. |
 | *9* | `02` | **OUT** | Output the value of the accumulator |
+| *9* | `22` | **OTC** | Output the value of the accumulator as an ASCII character |
 | *0* | `00` | **HLT** | Stop working |
 | *0* | `01` | **COB** | Stop the program |
