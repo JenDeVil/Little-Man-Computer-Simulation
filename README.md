@@ -12,4 +12,21 @@ The Little man computer simulation is a (very simple) simulation of a computer u
 
 The simulator also contains extra bits such as `in_vals`, `out_vals` and the `stp` variable, which we'll get onto when talking about the classes.
 
+# Instruction Set
 
+Note: `x` means *any* digit of that many characters long, for example `xx` is any value from `00` to `99`. Opcodes and Operands are ***never*** negative
+
+| Opcode | Operand | Mnemonic code | Description |
+|  :--:  |  :---:  |     :---:     | :---------- |
+| *1* | `xx` | **ADD** | Adds the value stored in the memory location `xx` to whatever value is currently stored in the accumulator and stores it there |
+| *2* | `xx` | **SUB** | Subtracts the value stored in the memory location `xx` from whatever value is currently stored in the accumulator and stores it there |
+| *3* | `xx` | **STA** | Stores the value in the accumulator to the memory location `xx` (destructive) |
+| *4* | | | This is an unused code and gives an error |
+| *5* | `xx` | **LDA** | Load the value from memory location `xx` (non-destructive) and enter it in the accumulator (destructive) |
+| *6* | `xx` | **BRA** | Sets the program counter to the given address `xx` |
+| *7* | `xx` | **BRZ** | If the accumulator contains the value 000 then set the program counter to the given address `xx` |
+| *8* | `xx` | **BRP** | If the accumulator contains a value between 000 and 999, then set the program counter to the given address `xx` |
+| *9* | `01` | **INP** | Get an input from the user and store it in the accumulator. |
+| *9* | `02` | **OUT** | Output the value of the accumulator |
+| *0* | `00` | **HLT** | Stop working |
+| *0* | `01` | **COB** | Stop the program |
