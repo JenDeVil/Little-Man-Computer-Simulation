@@ -33,3 +33,9 @@ class SubtractionError(ArithmeticError):
                        "Value in register [" + str(register_value) + "]\n" + \
                        "Min value [" + str(min_value) + "]\nGiven value [" + str(value) + "]"
         super().__init__(self.message)
+
+
+class HaltedError(RuntimeError):
+    def __init__(self):
+        self.message = "Program was unexpectedly halted"
+        super().__init__(self.message)
